@@ -1,0 +1,28 @@
+{
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "description": "esercizio boolean crud",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node --watch app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luca-Belardinelli/express-blog-api-crud.git"
+  },
+  "keywords": [
+    "crud",
+    "boolean"
+  ],
+  "author": "Luca Belardinelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luca-Belardinelli/express-blog-api-crud/issues"
+  },
+  "homepage": "https://github.com/Luca-Belardinelli/express-blog-api-crud#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
