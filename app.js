@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 // DEFINIAMO LA PORTA
 const port = 3000
-//importiamo il router 
+// IMPORTIAMO IL ROUTER
 const postsRouter = require('./routers/posts')
 
 
@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.send('Server del mio blog')
 })
 
-// router
+// ROUTER
 app.use("/posts", postsRouter)
 
 // AVVIAMO IL SERVER METTENDELO IN ASCOLTO SULLA PORTA INDICATA

@@ -44,4 +44,6 @@ const posts = [
   },
 ];
 
+
+// ESPORTIAMO L'ARRAY
 module.exports = posts;
