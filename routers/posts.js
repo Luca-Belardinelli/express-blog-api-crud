@@ -2,50 +2,29 @@
 const express = require('express');
 const router = express.Router();
 
-// IMPORTIAMO L'ARRAY DI OGGETTI PRESENTE IN POSTS DENTRO LA CARTELLA DATA
-const posts = require('../data/posts');
-
 // IMPORTIAMO LE FUNZIONI DEL CONTROLLER
-const postController = require('../controllers/postController');
+const postController = require('../controllers/postController.js');
 
 
 
 // ROTTE  CRUD
 // INDEX
-router.get('/', function (req, res) {
-    // res.send('Lista dei post');
-    res.json(posts);
-});
+router.get('/', postController.index);
 
 // SHOW
-router.get('/:id', function (req, res) {
-    // res.send('Dettagli del post ' + req.params.id);
-    res.json(posts + req.params.id);
-});
+router.get('/:id', postController.show);
 
 // STORE
-router.post('/', function (req, res) {
-    // res.send('Creazione nuova post');
-    res.json(posts);
-});
+router.post('/', postController.store);
 
 // UPDATE
-router.put('/:id', function (req, res) {
-    // res.send('Modifica integrale del post ' + req.params.id);
-    res.json(posts + req.params.id);
-});
+router.put('/:id', postController.update);
 
 // MODIFY
-router.patch('/:id', function (req, res) {
-    // res.send('Modifica parziale del post' + req.params.id);
-    res.json(posts + req.params.id);
-});
+router.patch('/:id', postController.modify);
 
 // DESTROY
-router.delete('/:id', function (req, res) {
-    // res.send('Eliminazione del post ' + req.params.id);
-    res.json(posts + req.params.id);
-});
+router.delete('/:id', postController.destroy);
 
 
 // ESPORTIAMO IL MODULO ROUTER
