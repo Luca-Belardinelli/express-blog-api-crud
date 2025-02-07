@@ -28,6 +28,7 @@ function show(req, res) {
 }
 // STORE
 function store(req, res) {
+    console.log(req.body);
     res.send("creazione nuovo post");
 }
 // UPDATE
