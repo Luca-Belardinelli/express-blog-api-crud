@@ -92,3 +92,14 @@ Bonus
     In Update, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno stato 404 e un messaggio d’errore, sempre in formato JSON.
 
 > Buon Lavoro e buon divertimento … e buon we 
+
+
+---------------------------------------------------------------------------------------------
+
+{
+    "title": "Carbonara",
+    "content":
+      "La carbonara è un classico della cucina romana, preparata con pochi ingredienti semplici ma dal gusto intenso: guanciale croccante, uova cremose, pecorino romano e pepe nero. Un piatto iconico che esalta la tradizione e la qualità delle materie prime.!",
+    "image": "/imgs/posts/carbonara.avif",
+    "tags": ["Uova", "Pecorino", "Ricette Romane", "Guanciale"]
+}

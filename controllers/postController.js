@@ -56,11 +56,65 @@ function store(req, res) {
 }
 // UPDATE
 function update(req, res) {
-    res.send("modifica completa del post numero " + req.params.id)
+    // res.send("modifica completa del post numero " + req.params.id)
+
+      // RECUPERO ID E LO TRASFORMO IN NUMERO
+      const id = parseInt(req.params.id)
+      // CHERCHIAMO IL POST TRAMITE ID
+      const post = posts.find(post => post.id === id);
+      // CONTROLLO 
+      if(!post) {
+          res.status(404);
+  
+          return res.json({
+              status: 404,
+              error: "Not Found",
+              message: "Post non trovato"
+          })
+      }
+      //AGGIORNIAMO IL POST
+       post.title = req.body.title;
+       post.content = req.body.content;
+       post.image = req.body.image;
+       post.tags = req.body.tags;
+
+      // VERIFICA SUL TERMINALE
+      console.log(posts);
+  
+      // RESTITUIAMO IL POST AGGIORNATO
+      res.json(post)
 }
 // MODIFY
 function modify(req, res) {
-    res.send("modifica parziale del post numero " + req.params.id);
+    // res.send("modifica parziale del post numero " + req.params.id);
+
+      // RECUPERO ID E LO TRASFORMO IN NUMERO
+      const id = parseInt(req.params.id)
+      // CHERCHIAMO IL POST TRAMITE ID
+      const post = posts.find(post => post.id === id);
+      // CONTROLLO 
+      if(!post) {
+          res.status(404);
+  
+          return res.json({
+              status: 404,
+              error: "Not Found",
+              message: "Post non trovato"
+          })
+      }
+
+        //  modifichiamo i dati della pizza trovata
+        if (req.body.title) {
+            post.title = req.body.title;
+        } else {
+            post.name = pizza.title;
+        }
+
+      // VERIFICA SUL TERMINALE
+      console.log(posts);
+  
+      // RESTITUIAMO IL POST AGGIORNATO
+      res.json(post)
 }
 // DESTROY
 function destroy(req, res) {
