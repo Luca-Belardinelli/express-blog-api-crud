@@ -34,7 +34,6 @@ function store(req, res) {
 
     // CREIAMO UN NUOVO ID INCREMENTANDO L'ULTIMO ID PRESENTE
     const newId = posts[posts.length -1].id + 1;
-
     // CREIAMO UN NUOVO OGGETTO 
     const newPost = {
         id: newId,
@@ -45,7 +44,7 @@ function store(req, res) {
     }
 
     // AGGIUNGIAMO IL NUOVO POST ALL 'ARRAY
-    posts.push(newId);
+    posts.push(newPost);
 
     //CONTROLLO
     console.log(posts);
