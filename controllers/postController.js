@@ -103,7 +103,7 @@ function modify(req, res) {
           })
       }
 
-        //  modifichiamo i dati della pizza trovata
+        //  MODIFICHIAMO I DATI DEL POST
         if (req.body.title) {
             post.title = req.body.title;
         } else {
