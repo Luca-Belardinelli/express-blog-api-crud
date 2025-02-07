@@ -11,6 +11,9 @@ const postsRouter = require('./routers/posts')
 // DEFINIAMO USA DI UNA CARTELLA PER I FILE STATICI
 app.use(express.static('public'));
 
+// REGISTRO IL BODY-PARSER PER JSON
+app.use(express.json());
+
 // DEFINIAMO LA PRIMA ROTTA
 app.get('/', (req, res) => {
     res.send('Server del mio blog')
