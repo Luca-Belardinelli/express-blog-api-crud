@@ -107,7 +107,7 @@ function modify(req, res) {
         if (req.body.title) {
             post.title = req.body.title;
         } else {
-            post.title = pizza.title;
+            post.title = post.title;
         }
 
       // VERIFICA SUL TERMINALE
