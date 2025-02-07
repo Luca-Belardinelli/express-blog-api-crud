@@ -1,5 +1,6 @@
 // IMPORTIAMO L'ARRAY PRESENTE IN DATA
 const posts = require('../data/posts.js');
+const { post } = require('../routers/posts.js');
 
 
 // FUNZIONE PER LE ROTTE
@@ -28,8 +29,31 @@ function show(req, res) {
 }
 // STORE
 function store(req, res) {
-    console.log(req.body);
-    res.send("creazione nuovo post");
+    // console.log(req.body);
+    // res.send("creazione nuovo post");
+
+    // CREIAMO UN NUOVO ID INCREMENTANDO L'ULTIMO ID PRESENTE
+    const newId = posts[posts.length -1].id + 1;
+
+    // CREIAMO UN NUOVO OGGETTO 
+    const newPost = {
+        id: newId,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    }
+
+    // AGGIUNGIAMO IL NUOVO POST ALL 'ARRAY
+    posts.push(newId);
+
+    //CONTROLLO
+    console.log(posts);
+
+    // STATUS CORRETTO E POST CREATO
+    res.status(201);
+    res.json(newPost);
+
 }
 // UPDATE
 function update(req, res) {
