@@ -6,6 +6,8 @@ const app = express()
 const port = 3000
 // IMPORTIAMO IL ROUTER
 const postsRouter = require('./routers/posts')
+// IMPORTIAMO IL MIDDLEWARE NOTFOUND
+const notFound = require('./middlewares/notFound');
 
 
 // DEFINIAMO USA DI UNA CARTELLA PER I FILE STATICI
@@ -21,6 +23,9 @@ app.get('/', (req, res) => {
 
 // ROUTER
 app.use("/posts", postsRouter)
+
+// UTILIZZIAMO NOTFOUND
+app.use(notFound);
 
 // AVVIAMO IL SERVER METTENDELO IN ASCOLTO SULLA PORTA INDICATA
 app.listen(port, () => {
