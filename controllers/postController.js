@@ -1,6 +1,6 @@
 // IMPORTIAMO L'ARRAY PRESENTE IN DATA
 const posts = require('../data/posts.js');
-const { post } = require('../routers/posts.js');
+// const { post } = require('../routers/posts.js');
 
 
 // FUNZIONE PER LE ROTTE
