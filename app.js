@@ -8,6 +8,8 @@ const port = 3000
 const postsRouter = require('./routers/posts')
 // IMPORTIAMO IL MIDDLEWARE NOTFOUND
 const notFound = require('./middlewares/notFound');
+// IMPORTIAMO IL MIDDLEWARE ERRORE SERVER
+const errorsHandler = require('./middlewares/errorsHandler');
 
 
 // DEFINIAMO USA DI UNA CARTELLA PER I FILE STATICI
@@ -26,6 +28,9 @@ app.use("/posts", postsRouter)
 
 // UTILIZZIAMO NOTFOUND
 app.use(notFound);
+
+// UTILIZZIAMO ERROR SERVER
+app.use(errorsHandler);
 
 // AVVIAMO IL SERVER METTENDELO IN ASCOLTO SULLA PORTA INDICATA
 app.listen(port, () => {

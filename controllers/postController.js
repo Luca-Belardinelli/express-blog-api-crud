@@ -7,6 +7,8 @@ const { post } = require('../routers/posts.js');
 
 // INDEX
 function index(req, res) {
+    // ERRORE PER TESTARE MIDDLEWARES SERVER
+    // dgerghtgrwfge;
     res.json(posts);
 }
 // SHOW
