@@ -11,12 +11,20 @@ const notFound = require('./middlewares/notFound');
 // IMPORTIAMO IL MIDDLEWARE ERRORE SERVER
 const errorsHandler = require('./middlewares/errorsHandler');
 
+// importiamo il middleware di CORS
+var cors = require('cors')
+
+
 
 // DEFINIAMO USA DI UNA CARTELLA PER I FILE STATICI
 app.use(express.static('public'));
 
 // REGISTRO IL BODY-PARSER PER JSON
 app.use(express.json());
+
+
+// registro il middleware di CORS
+app.use(cors({ origin: 'http://localhost:5173' }))
 
 // DEFINIAMO LA PRIMA ROTTA
 app.get('/', (req, res) => {
