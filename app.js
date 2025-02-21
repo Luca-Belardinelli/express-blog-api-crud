@@ -24,7 +24,7 @@ app.use(express.json());
 
 
 // registro il middleware di CORS
-app.use(cors({ origin: 'http://localhost:5173' }))
+app.use(cors())
 
 // DEFINIAMO LA PRIMA ROTTA
 app.get('/', (req, res) => {
